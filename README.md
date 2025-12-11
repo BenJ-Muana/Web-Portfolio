@@ -1,2 +1,2 @@
 # Web-Portfolio
-My very own first web portfolio as a web development student.
+The first version of my web portfolio as a web development student.
