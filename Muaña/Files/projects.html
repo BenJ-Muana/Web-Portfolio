@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muana's Portfolio | Forest Oasis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="celestial sun"></div>
+    <div class="celestial moon"></div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+    <nav>
+        <a class="nav-btn" href="index.html">HOME PAGE</a>
+        <a class="nav-btn" href="about.html">ABOUT ME</a>
+        <a class="nav-btn" href="projects.html">PROJECTS</a>
+    </nav>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projects-page" class="content-wrapper">
+        <div class="content-wrapper">
+            <section id="projects">
+                <h2>Featured Projects</h2>
+
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            🐾
+                        </div>
+                        <div class="card-content">
+                            <h3>PetFinder</h3>
+                            <p>A web application for pet adoption with user authentication, pet listing management, and search functionality. Built with PHP, MySQL, and modern CSS.</p>
+                            <a href="https://github.com/BenJ-Muana/PetFinder" target="_blank" class="btn-view">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025, Josh Benidect E. Muana. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? '' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+        }
+
+        function showPage(pageName) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(pageName + '-page').classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

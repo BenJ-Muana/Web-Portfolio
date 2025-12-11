@@ -8,51 +8,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="celestial sun"></div>
+    <div class="celestial moon"></div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
     <nav>
-        <a href="index.html" class="nav-btn">HOME PAGE</a>
-        <a href="about.html" class="nav-btn">ABOUT ME</a>
+        <a class="nav-btn" href="index.html">HOME PAGE</a>
+        <a class="nav-btn" href="about.html">ABOUT ME</a>
+        <a class="nav-btn" href="projects.html">PROJECTS</a>
     </nav>
 
-    <div class="hero-container">
-        
-        <div class="collage-container">
-            
-            <div class="collage-img-wrapper">
-                <img id="profile-img" src="../Images/Profile Image.jpeg" alt="Photo of web portfolio owner" 
-                    onerror="this.src='../Images/Profile Image.jpeg'; this.onerror=null;">
-            </div>
-            
-            <div id="intro-banner">
-                <h1>My Portfolio</h1>
-            </div>
-
-        </div>
-        
-        <h2 id="name">JOSH BENIDECT E. MUANA</h2>
-        <h3 id="saying">"✨ Still a Blank Canvas, ready to grow! ✨"</h3>
-    </div>
-
-    <div class="content-wrapper">
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        Project image here?
-                    </div>
-                    <div class="card-content">
-                        <h3>Project Title here?</h3>
-                        <p>Description here?.</p>
-                        <a href="#empty" class="btn-view">View Project</a>
-                    </div>
+    <!-- HOME PAGE -->
+        <div class="hero-container">
+            <div class="profile-card">
+                <img id="profile-img" src="../Images/Profile Image.jpeg" alt="Josh Benidect E. Muana" 
+                    onerror="this.src='https://placehold.co/200x200/C4EAD4/1E3A2F?text=JM'; this.onerror=null;">
+                
+                <h2 id="name">JOSH BENIDECT E. MUANA</h2>
+                <p id="saying">"✨ Still a Blank Canvas, ready to grow! ✨"</p>
+                
+                <div class="cta-buttons">
+                    <a class="btn-primary" href="about.html">Learn More About Me</a>
+                    <a class="btn-primary" href="projects.html">View My Projects</a>
                 </div>
             </div>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025, Josh Benidect E. Muana. All rights reserved.</p>
-    </footer>
+        </div>
 
+        <footer>
+            <p>&copy; 2025, Josh Benidect E. Muana. All rights reserved.</p>
+        </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? '' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+        }
+
+        function showPage(pageName) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(pageName + '-page').classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
